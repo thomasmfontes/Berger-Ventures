@@ -91,36 +91,53 @@ h1 {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Menu colapsado */
-.navbar-collapse {
-    position: absolute;
-    top: 100%;
-    /* Fica abaixo da navbar */
-    left: 0;
-    width: 100%;
-    /* Ocupa a largura completa */
-    background-color: #000000;
-    /* Fundo preto */
-    z-index: 1000;
-    padding: 1rem;
-    /* Espaçamento interno */
-    border-radius: 0 0 10px 10px;
-    /* Bordas arredondadas na parte inferior */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    /* Sombra */
-    transform: translateY(-200%);
-    /* Escondido inicialmente */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    /* Transição suave */
-    opacity: 0;
-    /* Invisível inicialmente */
-}
+@media (max-width: 992px) {
+    /* Menu colapsado refinado */
+    .navbar-collapse {
+        position: absolute;
+        top: calc(100% + 10px); /* Posicionado abaixo da navbar */
+        left: 5%;
+        right: 5%; /* Margens laterais para um layout fluido */
+        background: #1a1a1a; /* Preto levemente acinzentado */
+        z-index: 1000;
+        padding: 0.8rem 1rem; /* Espaçamento confortável */
+        border-radius: 12px; /* Bordas mais arredondadas */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra mais suave e moderna */
+        transform: scale(0.95); /* Reduzido inicialmente */
+        opacity: 0; /* Invisível inicialmente */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave e fluida */
+        display: none; /* Escondido por padrão */
+    }
 
-.navbar-collapse.show {
-    transform: translateY(0);
-    /* Desce suavemente */
-    opacity: 1;
-    /* Torna visível */
+    /* Menu visível */
+    .navbar-collapse.show {
+        transform: scale(1); /* Expande suavemente */
+        opacity: 1; /* Totalmente visível */
+        display: block;
+    }
+
+    /* Links no menu colapsado */
+    .navbar-nav .nav-link {
+        color: #f5f5f5; /* Texto branco suave */
+        font-size: 1rem; /* Tamanho confortável */
+        font-weight: 600; /* Um pouco mais forte */
+        padding: 0.7rem 1rem; /* Espaçamento interno balanceado */
+        text-align: center; /* Centralizado */
+        text-transform: capitalize; /* Apenas a primeira letra maiúscula */
+        border-radius: 8px; /* Bordas arredondadas suaves */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+    }
+
+    /* Hover nos links */
+    .navbar-nav .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1); /* Fundo translúcido sutil */
+        color: #32cd32; /* Verde claro no hover */
+    }
+
+    /* Espaçamento entre links */
+    .navbar-nav .nav-item + .nav-item {
+        margin-top: 0.6rem; /* Espaçamento maior entre os links */
+    }
 }
 
 /* Manter comportamento padrão em telas maiores */
