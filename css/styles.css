@@ -73,18 +73,18 @@ h1 {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Estilo do menu colapsado */
+/* Menu colapsado */
 .navbar-collapse {
-    position: absolute; /* Colocado fora da navbar */
-    top: 100%; /* Alinhado abaixo da navbar */
+    position: absolute;
+    top: 100%; /* Fica abaixo da navbar */
     left: 0;
     width: 100%; /* Ocupa a largura completa */
     background-color: #000000; /* Fundo preto */
-    z-index: 1000; /* Garante que esteja acima de outros elementos */
+    z-index: 1000;
     padding: 1rem; /* Espaçamento interno */
     border-radius: 0 0 10px 10px; /* Bordas arredondadas na parte inferior */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
-    transform: translateY(-200%); /* Inicialmente escondido */
+    transform: translateY(-200%); /* Escondido inicialmente */
     transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
     opacity: 0; /* Invisível inicialmente */
 }
@@ -94,11 +94,23 @@ h1 {
     opacity: 1; /* Torna visível */
 }
 
+/* Manter comportamento padrão em telas maiores */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        position: static; /* Remove comportamento de colapso */
+        transform: none; /* Remove transformações */
+        opacity: 1; /* Sempre visível */
+        box-shadow: none; /* Remove sombra */
+        padding: 0; /* Remove padding adicional */
+        background-color: transparent; /* Torna o fundo transparente */
+    }
+}
+
 /* Links da navbar */
 .nav-link {
     color: #FFFFFF; /* Texto branco */
     margin-left: 1rem;
-    font-size: 1.1rem; /* Tamanho do texto */
+    font-size: 1.1rem;
     font-weight: bold; /* Destaque */
     text-transform: uppercase; /* Letras maiúsculas */
     position: relative; /* Para animações */
@@ -129,7 +141,7 @@ h1 {
 /* Menu colapsado (mobile) */
 @media (max-width: 992px) {
     .navbar-nav {
-        display: flex; /* Exibe os links como blocos */
+        display: flex;
         flex-direction: column; /* Empilha os links verticalmente */
         gap: 0.5rem; /* Espaçamento entre links */
         padding: 0.5rem;
