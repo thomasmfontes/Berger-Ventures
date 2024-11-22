@@ -73,22 +73,22 @@ h1 {
     /* Leve zoom ao passar o mouse */
 }
 
-/* Botão de menu (hambúrguer) */
+/* Botão do dropdown com estilo */
 .navbar-toggler {
-    border: 1px solid #FFFFFF;
-    /* Borda branca */
-    border-radius: 5px;
-    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+    padding: 0.5rem;
+    border-radius: 5px; /* Bordas arredondadas */
     transition: background-color 0.3s ease;
 }
 
 .navbar-toggler:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Fundo ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.3); /* Fundo mais claro ao passar o mouse */
 }
 
+/* Ícones mais elegantes */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* Menu colapsado */
