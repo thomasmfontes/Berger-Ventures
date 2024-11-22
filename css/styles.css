@@ -30,15 +30,14 @@ h1 {
 
 /* Estilo padrão da navbar */
 .navbar {
-    background: linear-gradient(90deg, #000000, #004d00); /* Gradiente inicial */
+    background: linear-gradient(90deg, #000000, #004d00);
     padding: 1rem 2rem; /* Padding inicial */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
-    transition: all 0.3s ease; /* Transição suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    transition: padding 0.2s ease, background 0.3s ease; /* Transição mais rápida no padding */
 }
 
-/* Estilo reduzido da navbar */
 .navbar.scrolled {
-    padding: 0.2rem 1rem; /* Padding reduzido */
+    padding: 0.5rem 1rem; /* Padding reduzido */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra menor */
     background: linear-gradient(90deg, #000000, #003300); /* Fundo mais escuro */
 }
@@ -46,7 +45,7 @@ h1 {
 /* Ajuste na logo */
 .navbar-brand img {
     height: 80px; /* Altura inicial */
-    transition: height 0.3s ease; /* Transição suave */
+    transition: height 0.4s ease; /* Transição suave */
 }
 
 .navbar.scrolled .navbar-brand img {
