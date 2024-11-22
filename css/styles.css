@@ -43,13 +43,10 @@ h1 {
 /* Efeito de navbar reduzida em telas menores */
 @media (max-width: 992px) {
     .navbar.scrolled {
-        padding: 0.3rem 0.8rem;
-        /* Reduz ainda mais o padding */
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        /* Sombra mais leve */
-        background: linear-gradient(90deg, #000000, #002200);
-        /* Fundo mais escuro */
-    }
+        padding: 0.1rem 0.5rem; /* Reduz ainda mais o padding */
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
+        background: linear-gradient(90deg, #000000, #001100); /* Fundo mais escuro */
+    }   
 }
 
 /* Ajuste na logo */
@@ -63,7 +60,7 @@ h1 {
 /* Efeito na logo ao rolar (apenas em telas menores) */
 @media (max-width: 992px) {
     .navbar.scrolled .navbar-brand img {
-        height: 30px;
+        height: 20px;
         /* Altura ainda menor para a logo */
     }
 }
