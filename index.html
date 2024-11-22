@@ -413,29 +413,27 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
         const navbar = document.querySelector('.navbar');
-        let isScrolled = false; // Estado atual da navbar
+        let isScrolled = false; // Estado da navbar (expandida ou recolhida)
         const scrollThreshold = 50; // Limite de rolagem
-        let scrollTimeout; // Timeout para debounce
+        const safeMargin = 10; // Intervalo seguro de 5px
 
-        function handleScroll() {
+        function updateNavbarState() {
             const currentScrollY = window.scrollY;
 
-            // Verifica se precisa adicionar ou remover a classe
-            if (currentScrollY > scrollThreshold && !isScrolled) {
+            // Adiciona a classe "scrolled" quando ultrapassa o limite + intervalo seguro
+            if (currentScrollY > scrollThreshold + safeMargin && !isScrolled) {
                 navbar.classList.add('scrolled');
                 isScrolled = true;
-            } else if (currentScrollY <= scrollThreshold && isScrolled) {
+            }
+            // Remove a classe "scrolled" quando desce abaixo do limite - intervalo seguro
+            else if (currentScrollY < scrollThreshold - safeMargin && isScrolled) {
                 navbar.classList.remove('scrolled');
                 isScrolled = false;
             }
         }
 
-        function debounceScroll() {
-            clearTimeout(scrollTimeout); // Reseta o timeout
-            scrollTimeout = setTimeout(handleScroll, 50); // Executa após 50ms
-        }
-
-        window.addEventListener('scroll', debounceScroll); // Evento de rolagem com debounce
+        // Evento de rolagem
+        window.addEventListener('scroll', updateNavbarState);
 
         // Smooth Scroll para âncoras
         $(document).ready(function () {
@@ -499,7 +497,6 @@
             offset: 50      // Ajusta o gatilho de exibição
         });
     </script>
-
 </body>
 
 </html>
