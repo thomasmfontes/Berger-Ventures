@@ -30,228 +30,150 @@ h1 {
     text-shadow: 2px 1px 2px rgb(172, 172, 172);
 }
 
-/* Estilo padrão da navbar */
+/* Navbar geral */
 .navbar {
     background: linear-gradient(90deg, #000000, #004d00);
     padding: 1rem 2rem;
-    /* Padding inicial */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    /* Sombra inicial */
     transition: all 0.3s ease-in-out;
 }
 
-/* Efeito de navbar reduzida em telas menores */
+/* Navbar reduzida em telas menores */
 @media (max-width: 992px) {
     .navbar.scrolled {
         padding: 0.3rem 0.8rem;
-        /* Reduz ainda mais o padding */
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        /* Sombra mais leve */
         background: linear-gradient(90deg, #000000, #002200);
-        /* Fundo mais escuro */
     }
 }
 
-/* Ajuste na logo */
+/* Logo */
 .navbar-brand img {
     height: 80px;
-    /* Altura inicial */
     transition: height 0.4s ease;
-    /* Transição suave */
 }
-
-/* Efeito na logo ao rolar (apenas em telas menores) */
 @media (max-width: 992px) {
     .navbar.scrolled .navbar-brand img {
         height: 30px;
-        /* Altura ainda menor para a logo */
     }
 }
-
 .navbar-brand img:hover {
     transform: scale(1.1);
-    /* Leve zoom ao passar o mouse */
 }
 
-/* Botão do dropdown com estilo */
+/* Botão do dropdown */
 .navbar-toggler {
     border: none;
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 0.5rem;
-    border-radius: 5px; /* Bordas arredondadas */
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-
 .navbar-toggler:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Fundo mais claro ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.3);
 }
-
-/* Ícones mais elegantes */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+/* Menu colapsado (mobile) */
 @media (max-width: 992px) {
-    /* Menu colapsado refinado */
     .navbar-collapse {
         position: absolute;
-        top: calc(100% + 10px); /* Posicionado abaixo da navbar */
+        top: calc(100% + 10px);
         left: 5%;
-        right: 5%; /* Margens laterais para um layout fluido */
-        background: #1a1a1a; /* Preto levemente acinzentado */
+        right: 5%;
+        background: #1a1a1a;
         z-index: 1000;
-        padding: 0.8rem 1rem; /* Espaçamento confortável */
-        border-radius: 12px; /* Bordas mais arredondadas */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra mais suave e moderna */
-        transform: scale(0.95); /* Reduzido inicialmente */
-        opacity: 0; /* Invisível inicialmente */
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave e fluida */
-        display: none; /* Escondido por padrão */
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transform: scale(0.95);
+        opacity: 0;
+        display: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    /* Menu visível */
     .navbar-collapse.show {
-        transform: scale(1); /* Expande suavemente */
-        opacity: 1; /* Totalmente visível */
+        transform: scale(1);
+        opacity: 1;
         display: block;
     }
-
-    /* Links no menu colapsado */
-    .navbar-nav .nav-link {
-        color: #f5f5f5; /* Texto branco suave */
-        font-size: 1rem; /* Tamanho confortável */
-        font-weight: 600; /* Um pouco mais forte */
-        padding: 0.7rem 1rem; /* Espaçamento interno balanceado */
-        text-align: center; /* Centralizado */
-        text-transform: capitalize; /* Apenas a primeira letra maiúscula */
-        border-radius: 8px; /* Bordas arredondadas suaves */
-        transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        text-align: center;
     }
-
-    /* Hover nos links */
-    .navbar-nav .nav-link:hover {
-        background: rgba(255, 255, 255, 0.1); /* Fundo translúcido sutil */
-        color: #32cd32; /* Verde claro no hover */
+    .nav-link {
+        padding: 0.7rem 1rem;
+        color: #f5f5f5;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
-
-    /* Espaçamento entre links */
-    .navbar-nav .nav-item + .nav-item {
-        margin-top: 0.6rem; /* Espaçamento maior entre os links */
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #32cd32;
     }
 }
 
-/* Manter comportamento padrão em telas maiores */
+/* Menu em telas maiores */
 @media (min-width: 992px) {
     .navbar-collapse {
         position: static;
-        /* Remove comportamento de colapso */
         transform: none;
-        /* Remove transformações */
         opacity: 1;
-        /* Sempre visível */
         box-shadow: none;
-        /* Remove sombra */
         padding: 0;
-        /* Remove padding adicional */
         background-color: transparent;
-        /* Torna o fundo transparente */
+    }
+
+    .nav-link {
+        margin-left: 1rem;
     }
 }
 
-/* Links da navbar */
+/* Links */
 .nav-link {
-    color: #FFFFFF;
-    /* Texto branco */
-    margin-left: 1rem;
+    color: #fff;
     font-size: 1.1rem;
     font-weight: bold;
-    /* Destaque */
     text-transform: uppercase;
-    /* Letras maiúsculas */
     position: relative;
-    /* Para animações */
     overflow: hidden;
-    /* Oculta animações fora do link */
     transition: color 0.3s, transform 0.3s;
-    /* Transições suaves */
 }
-
 .nav-link::before {
     content: "";
     position: absolute;
     bottom: 0;
-    /* Posicionado abaixo do texto */
     left: 0;
     width: 0;
-    /* Inicialmente invisível */
     height: 2px;
-    /* Espessura da linha */
     background: linear-gradient(90deg, #00cc00, #004d00);
-    /* Gradiente na linha */
     transition: width 0.3s ease;
-    /* Crescimento suave */
 }
-
 .nav-link:hover::before {
     width: 100%;
-    /* Linha cresce ao passar o mouse */
 }
-
 .nav-link:hover {
     color: #00cc00;
-    /* Cor vibrante ao passar o mouse */
     transform: translateY(-3px);
-    /* Leve elevação */
 }
 
-/* Menu colapsado (mobile) */
-@media (max-width: 992px) {
-    .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        /* Empilha os links verticalmente */
-        gap: 0.5rem;
-        /* Espaçamento entre links */
-        padding: 0.5rem;
-        text-align: center;
-        /* Centraliza os links */
-        font-size: 1rem;
-        /* Texto menor */
-    }
-
-    .nav-link {
-        padding: 0.7rem 1rem;
-        /* Espaçamento maior entre os itens */
-        text-align: center;
-        transition: color 0.3s, background-color 0.3s ease-in-out;
-    }
-
-    .nav-link:hover {
-        color: #00cc00;
-        /* Cor vibrante no texto ao passar o mouse */
-        background-color: rgba(0, 128, 0, 0.2);
-        /* Fundo ao passar o mouse */
-        border-radius: 5px;
-        /* Destaque sutil */
-    }
-}
-
-/* Navbar Sticky */
+/* Navbar sticky */
 .sticky-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
     transition: all 0.3s ease;
-    /* Transição suave */
 }
-
 @media (max-width: 992px) {
     .sticky-top.scrolled {
         background: linear-gradient(90deg, #000000, #006600);
-        /* Fundo ao rolar */
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        /* Sombra mais intensa */
     }
 }
 
