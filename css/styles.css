@@ -29,17 +29,31 @@ h1 {
 
 /* Estilos da barra de navegação */
 .navbar {
-    background-color: #000000; /* Fundo preto */
+    background: linear-gradient(90deg, #000000, #004d00); /* Gradiente elegante */
     padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha discreta */
+    transition: background-color 0.3s ease; /* Transição suave */
 }
 
 .navbar-brand img {
-    height: 80px; /* Ajuste a altura da logo */
+    height: 80px; /* Ajuste da altura da logo */
+    transition: transform 0.3s ease; /* Efeito na logo */
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1); /* Leve zoom ao passar o mouse */
 }
 
 .navbar-toggler {
-    border: none;
+    border: 1px solid #FFFFFF; /* Borda branca para destacar */
+    border-radius: 5px;
     outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo ao passar o mouse */
 }
 
 .navbar-toggler-icon {
@@ -54,28 +68,60 @@ h1 {
     color: #FFFFFF; /* Texto branco */
     margin-left: 1rem;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    font-weight: bold; /* Destaque no texto */
+    text-transform: uppercase; /* Letras maiúsculas */
+    position: relative; /* Para animações baseadas na posição */
+    overflow: hidden; /* Oculta efeitos fora do link */
+    transition: color 0.3s, transform 0.3s; /* Transições suaves */
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Posicionado abaixo do texto */
+    left: 0;
+    width: 0; /* Inicialmente invisível */
+    height: 2px; /* Espessura da linha */
+    background: linear-gradient(90deg, #00cc00, #004d00); /* Gradiente na linha */
+    transition: width 0.3s ease; /* Efeito de preenchimento */
+}
+
+.nav-link:hover::before {
+    width: 100%; /* Linha cresce ao passar o mouse */
 }
 
 .nav-link:hover {
-    color: #008000; /* Verde ao passar o mouse */
+    color: #00cc00; /* Cor vibrante ao passar o mouse */
+    transform: translateY(-3px); /* Elevação */
 }
 
+/* Navbar Sticky */
 .sticky-top {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
+    transition: all 0.3s ease; /* Transição suave */
 }
 
+.sticky-top.scrolled {
+    background: linear-gradient(90deg, #000000, #006600); /* Fundo ao rolar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Mais sombra */
+}
+
+/* Navbar colapsada para dispositivos móveis */
 @media (max-width: 992px) {
     .navbar-nav {
         background-color: #000000; /* Fundo preto para o menu colapsado */
+        padding: 1rem;
+        border-radius: 10px; /* Bordas arredondadas */
+        transition: all 0.3s ease-in-out;
     }
 
     .nav-link {
-        padding: 0.5rem 1rem;
+        padding: 0.7rem 1rem;
         text-align: center;
+        font-size: 1rem;
     }
 }
 
