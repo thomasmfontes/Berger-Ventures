@@ -2,23 +2,25 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000; /* Fundo principal preto */
-    color: #FFFFFF; /* Texto branco */
+    background-color: #000000;
+    /* Fundo principal preto */
+    color: #FFFFFF;
+    /* Texto branco */
 }
 
 #home {
     background: url('../img/home.jpg') no-repeat center center;
     background-size: cover;
-    color: #FFFFFF; /* Texto branco */
+    color: #FFFFFF;
+    /* Texto branco */
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-attachment: fixed;
-    margin-top: -100px;  
+    margin-top: -100px;
 }
-
 
 h1 {
     font-family: 'Averia Serif Libre', serif;
@@ -31,41 +33,58 @@ h1 {
 /* Estilo padrão da navbar */
 .navbar {
     background: linear-gradient(90deg, #000000, #004d00);
-    padding: 1rem 2rem; /* Padding inicial */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    padding: 1rem 2rem;
+    /* Padding inicial */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra inicial */
     transition: all 0.3s ease-in-out;
 }
 
-.navbar.scrolled {
-    padding: 0.5rem 1rem; /* Padding reduzido */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra menor */
-    background: linear-gradient(90deg, #000000, #003300); /* Fundo mais escuro */
+/* Efeito de navbar reduzida em telas menores */
+@media (max-width: 992px) {
+    .navbar.scrolled {
+        padding: 0.3rem 0.8rem;
+        /* Reduz ainda mais o padding */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        /* Sombra mais leve */
+        background: linear-gradient(90deg, #000000, #002200);
+        /* Fundo mais escuro */
+    }
 }
 
 /* Ajuste na logo */
 .navbar-brand img {
-    height: 80px; /* Altura inicial */
-    transition: height 0.4s ease; /* Transição suave */
+    height: 80px;
+    /* Altura inicial */
+    transition: height 0.4s ease;
+    /* Transição suave */
 }
 
-.navbar.scrolled .navbar-brand img {
-    height: 40px; /* Altura reduzida */
+/* Efeito na logo ao rolar (apenas em telas menores) */
+@media (max-width: 992px) {
+    .navbar.scrolled .navbar-brand img {
+        height: 30px;
+        /* Altura ainda menor para a logo */
+    }
 }
 
 .navbar-brand img:hover {
-    transform: scale(1.1); /* Leve zoom ao passar o mouse */
+    transform: scale(1.1);
+    /* Leve zoom ao passar o mouse */
 }
 
 /* Botão de menu (hambúrguer) */
 .navbar-toggler {
-    border: 1px solid #FFFFFF; /* Borda branca */
+    border: 1px solid #FFFFFF;
+    /* Borda branca */
     border-radius: 5px;
     outline: none;
     transition: background-color 0.3s ease;
 }
 
 .navbar-toggler:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fundo ao passar o mouse */
 }
 
 .navbar-toggler-icon {
@@ -75,89 +94,128 @@ h1 {
 /* Menu colapsado */
 .navbar-collapse {
     position: absolute;
-    top: 100%; /* Fica abaixo da navbar */
+    top: 100%;
+    /* Fica abaixo da navbar */
     left: 0;
-    width: 100%; /* Ocupa a largura completa */
-    background-color: #000000; /* Fundo preto */
+    width: 100%;
+    /* Ocupa a largura completa */
+    background-color: #000000;
+    /* Fundo preto */
     z-index: 1000;
-    padding: 1rem; /* Espaçamento interno */
-    border-radius: 0 0 10px 10px; /* Bordas arredondadas na parte inferior */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
-    transform: translateY(-200%); /* Escondido inicialmente */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
-    opacity: 0; /* Invisível inicialmente */
+    padding: 1rem;
+    /* Espaçamento interno */
+    border-radius: 0 0 10px 10px;
+    /* Bordas arredondadas na parte inferior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    transform: translateY(-200%);
+    /* Escondido inicialmente */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Transição suave */
+    opacity: 0;
+    /* Invisível inicialmente */
 }
 
 .navbar-collapse.show {
-    transform: translateY(0); /* Desce suavemente */
-    opacity: 1; /* Torna visível */
+    transform: translateY(0);
+    /* Desce suavemente */
+    opacity: 1;
+    /* Torna visível */
 }
 
 /* Manter comportamento padrão em telas maiores */
 @media (min-width: 992px) {
     .navbar-collapse {
-        position: static; /* Remove comportamento de colapso */
-        transform: none; /* Remove transformações */
-        opacity: 1; /* Sempre visível */
-        box-shadow: none; /* Remove sombra */
-        padding: 0; /* Remove padding adicional */
-        background-color: transparent; /* Torna o fundo transparente */
+        position: static;
+        /* Remove comportamento de colapso */
+        transform: none;
+        /* Remove transformações */
+        opacity: 1;
+        /* Sempre visível */
+        box-shadow: none;
+        /* Remove sombra */
+        padding: 0;
+        /* Remove padding adicional */
+        background-color: transparent;
+        /* Torna o fundo transparente */
     }
 }
 
 /* Links da navbar */
 .nav-link {
-    color: #FFFFFF; /* Texto branco */
+    color: #FFFFFF;
+    /* Texto branco */
     margin-left: 1rem;
     font-size: 1.1rem;
-    font-weight: bold; /* Destaque */
-    text-transform: uppercase; /* Letras maiúsculas */
-    position: relative; /* Para animações */
-    overflow: hidden; /* Oculta animações fora do link */
-    transition: color 0.3s, transform 0.3s; /* Transições suaves */
+    font-weight: bold;
+    /* Destaque */
+    text-transform: uppercase;
+    /* Letras maiúsculas */
+    position: relative;
+    /* Para animações */
+    overflow: hidden;
+    /* Oculta animações fora do link */
+    transition: color 0.3s, transform 0.3s;
+    /* Transições suaves */
 }
 
 .nav-link::before {
     content: "";
     position: absolute;
-    bottom: 0; /* Posicionado abaixo do texto */
+    bottom: 0;
+    /* Posicionado abaixo do texto */
     left: 0;
-    width: 0; /* Inicialmente invisível */
-    height: 2px; /* Espessura da linha */
-    background: linear-gradient(90deg, #00cc00, #004d00); /* Gradiente na linha */
-    transition: width 0.3s ease; /* Crescimento suave */
+    width: 0;
+    /* Inicialmente invisível */
+    height: 2px;
+    /* Espessura da linha */
+    background: linear-gradient(90deg, #00cc00, #004d00);
+    /* Gradiente na linha */
+    transition: width 0.3s ease;
+    /* Crescimento suave */
 }
 
 .nav-link:hover::before {
-    width: 100%; /* Linha cresce ao passar o mouse */
+    width: 100%;
+    /* Linha cresce ao passar o mouse */
 }
 
 .nav-link:hover {
-    color: #00cc00; /* Cor vibrante ao passar o mouse */
-    transform: translateY(-3px); /* Leve elevação */
+    color: #00cc00;
+    /* Cor vibrante ao passar o mouse */
+    transform: translateY(-3px);
+    /* Leve elevação */
 }
 
 /* Menu colapsado (mobile) */
 @media (max-width: 992px) {
     .navbar-nav {
         display: flex;
-        flex-direction: column; /* Empilha os links verticalmente */
-        gap: 0.5rem; /* Espaçamento entre links */
+        flex-direction: column;
+        /* Empilha os links verticalmente */
+        gap: 0.5rem;
+        /* Espaçamento entre links */
         padding: 0.5rem;
-        text-align: center; /* Centraliza os links */
-        font-size: 1rem; /* Texto menor */
+        text-align: center;
+        /* Centraliza os links */
+        font-size: 1rem;
+        /* Texto menor */
     }
 
     .nav-link {
-        padding: 0.7rem 1rem; /* Espaçamento maior entre os itens */
+        padding: 0.7rem 1rem;
+        /* Espaçamento maior entre os itens */
         text-align: center;
         transition: color 0.3s, background-color 0.3s ease-in-out;
     }
 
     .nav-link:hover {
-        color: #00cc00; /* Cor vibrante no texto ao passar o mouse */
-        background-color: rgba(0, 128, 0, 0.2); /* Fundo ao passar o mouse */
-        border-radius: 5px; /* Destaque sutil */
+        color: #00cc00;
+        /* Cor vibrante no texto ao passar o mouse */
+        background-color: rgba(0, 128, 0, 0.2);
+        /* Fundo ao passar o mouse */
+        border-radius: 5px;
+        /* Destaque sutil */
     }
 }
 
@@ -167,47 +225,58 @@ h1 {
     position: sticky;
     top: 0;
     z-index: 1020;
-    transition: all 0.3s ease; /* Transição suave */
+    transition: all 0.3s ease;
+    /* Transição suave */
 }
 
-.sticky-top.scrolled {
-    background: linear-gradient(90deg, #000000, #006600); /* Fundo ao rolar */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+@media (max-width: 992px) {
+    .sticky-top.scrolled {
+        background: linear-gradient(90deg, #000000, #006600);
+        /* Fundo ao rolar */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        /* Sombra mais intensa */
+    }
 }
-
 
 /* Estilos para a seção de galeria */
 #gallery {
     padding: 60px 0;
-    background-color: #121212; /* Fundo escuro para a seção */
-    color: #FFFFFF; /* Texto branco */
+    background-color: #121212;
+    /* Fundo escuro para a seção */
+    color: #FFFFFF;
+    /* Texto branco */
 }
 
 #gallery .card {
-    background-color: #2c2c2c; /* Fundo dos cards */
+    background-color: #2c2c2c;
+    /* Fundo dos cards */
     border: none;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
-    height: 100%; /* Altura dos cards igual */
+    height: 100%;
+    /* Altura dos cards igual */
     display: flex;
     flex-direction: column;
 }
 
 #gallery .card:hover {
-    transform: translateY(-5px); /* Efeito de levantamento ao passar o mouse */
+    transform: translateY(-5px);
+    /* Efeito de levantamento ao passar o mouse */
 }
 
 #gallery .card-img-top {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Imagem cobre todo o espaço */
+    object-fit: cover;
+    /* Imagem cobre todo o espaço */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
 
 #gallery .card-body {
-    flex: 1; /* O corpo do card ocupa o espaço disponível */
+    flex: 1;
+    /* O corpo do card ocupa o espaço disponível */
     padding: 20px;
 }
 
@@ -232,7 +301,8 @@ h1 {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background-color: #008000; /* Cor padrão do WhatsApp */
+    background-color: #008000;
+    /* Cor padrão do WhatsApp */
     color: black;
     padding: 10px 15px;
     border-radius: 50px;
@@ -243,7 +313,8 @@ h1 {
 }
 
 .whatsapp-btn:hover {
-    background-color: #004d00; /* Cor ligeiramente mais escura ao passar o mouse */
+    background-color: #004d00;
+    /* Cor ligeiramente mais escura ao passar o mouse */
 }
 
 /* Estilo para a seção de serviços */
@@ -270,13 +341,15 @@ h1 {
 }
 
 #services1 .card-body {
-    color: #FFFFFF; /* Cor do texto ajustada para contraste */
+    color: #FFFFFF;
+    /* Cor do texto ajustada para contraste */
 }
 
 #services1 .card-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #FFFFFF; /* Cor personalizada para o título */
+    color: #FFFFFF;
+    /* Cor personalizada para o título */
 }
 
 #services1 .card-text {
@@ -293,49 +366,68 @@ h1 {
 }
 
 #outra-secao .text-container {
-    padding-right: 30px; /* Espaçamento à direita para separar do lado da imagem */
+    padding-right: 30px;
+    /* Espaçamento à direita para separar do lado da imagem */
     background-color: #2c2c2c;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo translúcido */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Cor de fundo translúcido */
     border-radius: 10px;
 }
 
 #outra-secao h2 {
-    font-weight: bold; /* Fonte em negrito */
-    margin-bottom: 20px; /* Espaçamento inferior */
-    line-height: 1.4; /* Altura da linha */
+    font-weight: bold;
+    /* Fonte em negrito */
+    margin-bottom: 20px;
+    /* Espaçamento inferior */
+    line-height: 1.4;
+    /* Altura da linha */
     padding: 20px;
     padding-right: 0px;
 }
 
 #outra-secao p {
-    font-size: 1.1rem; /* Tamanho do texto */
-    line-height: 1.8; /* Altura da linha */
-    margin-bottom: 20px; /* Espaçamento inferior */
-    text-align: center; /* Centraliza o texto */
+    font-size: 1.1rem;
+    /* Tamanho do texto */
+    line-height: 1.8;
+    /* Altura da linha */
+    margin-bottom: 20px;
+    /* Espaçamento inferior */
+    text-align: center;
+    /* Centraliza o texto */
 }
 
 #outra-secao .image-container {
-    position: relative; /* Posicionamento relativo para alinhar elementos internos */
-    overflow: hidden; /* Oculta qualquer parte da imagem que extrapolar o container */
-    border-radius: 10px; /* Borda arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: relative;
+    /* Posicionamento relativo para alinhar elementos internos */
+    overflow: hidden;
+    /* Oculta qualquer parte da imagem que extrapolar o container */
+    border-radius: 10px;
+    /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
 #outra-secao img {
-    width: 100%; /* Imagem ocupa todo o espaço disponível */
-    height: auto; /* Altura automática */
-    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+    width: 100%;
+    /* Imagem ocupa todo o espaço disponível */
+    height: auto;
+    /* Altura automática */
+    transition: transform 0.3s ease;
+    /* Transição suave ao passar o mouse */
 }
 
 #outra-secao img:hover {
-    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+    transform: scale(1.05);
+    /* Efeito de escala ao passar o mouse */
 }
 
 #services {
-    background-color: #f8f9fa; /* Fundo claro */
-    color: #212529; /* Texto principal */
+    background-color: #f8f9fa;
+    /* Fundo claro */
+    color: #212529;
+    /* Texto principal */
     padding: 80px 0;
 }
 
@@ -343,41 +435,48 @@ h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 40px;
-    color: #FFFFFF; /* Título com cor mais escura */
+    color: #FFFFFF;
+    /* Título com cor mais escura */
 }
 
 #services .text-center i {
-    color: #008000; /* Ícones com cor verde */
+    color: #008000;
+    /* Ícones com cor verde */
     margin-bottom: 20px;
 }
 
 #services .col-md-4 {
-    margin-bottom: 30px; /* Espaçamento inferior para as colunas */
+    margin-bottom: 30px;
+    /* Espaçamento inferior para as colunas */
 }
 
 #services h3 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #FFFFFF; /* Títulos das seções */
+    color: #FFFFFF;
+    /* Títulos das seções */
 }
 
 #services p {
     font-size: 1rem;
-    color: #999; /* Texto do parágrafo em cinza escuro */
+    color: #999;
+    /* Texto do parágrafo em cinza escuro */
 }
 
 #home h1 {
     font-size: 3em;
     animation: fadeInDown 1s;
-    color: #FFFFFF; /* Texto branco */
+    color: #FFFFFF;
+    /* Texto branco */
     text-shadow: none;
 }
 
 #home p {
     font-size: 1.5em;
     animation: fadeInUp 1s;
-    color: #FFFFFF; /* Texto branco */
+    color: #FFFFFF;
+    /* Texto branco */
 }
 
 .teste {
@@ -386,29 +485,36 @@ h1 {
 
 section {
     padding: 60px 0;
-    background-color: #121212; /* Fundo escuro para seções */
-    color: #FFFFFF; /* Texto branco */
+    background-color: #121212;
+    /* Fundo escuro para seções */
+    color: #FFFFFF;
+    /* Texto branco */
 }
 
 .bg-light {
-    background-color: #2c2c2c !important; /* Alterar cor de fundo clara para escura */
+    background-color: #2c2c2c !important;
+    /* Alterar cor de fundo clara para escura */
 }
 
 /* Saiba Mais btn */
 .btn-primary {
-    background-color: #008000; /* Cor verde do botão */
+    background-color: #008000;
+    /* Cor verde do botão */
     border-color: #008000;
     animation: fadeInUp 1s;
 }
 
 .btn-primary:hover {
-    background-color: #004d00; /* Cor verde mais escura ao passar o mouse */
+    background-color: #004d00;
+    /* Cor verde mais escura ao passar o mouse */
     border-color: #004d00;
 }
 
 .contact-section {
-    background-color: #121212; /* Fundo escuro */
-    color: #FFFFFF; /* Texto branco */
+    background-color: #121212;
+    /* Fundo escuro */
+    color: #FFFFFF;
+    /* Texto branco */
     padding: 60px 0;
 }
 
@@ -428,20 +534,24 @@ section {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #2c2c2c; /* Fundo dos campos de formulário */
+    background-color: #2c2c2c;
+    /* Fundo dos campos de formulário */
     color: #FFFFFF;
 }
 
 .form-control::placeholder {
-    color: #999; /* Cor do placeholder */
+    color: #999;
+    /* Cor do placeholder */
 }
 
 .form-control:focus {
     background-color: #2c2c2c;
     color: #FFFFFF;
-    border-color: #008000; /* Cor verde ao focar no campo */
+    border-color: #008000;
+    /* Cor verde ao focar no campo */
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Sombra verde ao focar */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+    /* Sombra verde ao focar */
 }
 
 .form-container {
@@ -476,7 +586,7 @@ section {
 
 .custom-select:focus {
     box-shadow: none;
-    
+
 }
 
 .input-group-text {
@@ -486,7 +596,8 @@ section {
 }
 
 .btn-primary {
-    background-color: #008000; /* Cor verde do botão */
+    background-color: #008000;
+    /* Cor verde do botão */
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -494,7 +605,8 @@ section {
 }
 
 .btn-primary:hover {
-    background-color: #004d00; /* Cor verde mais escura ao passar o mouse */
+    background-color: #004d00;
+    /* Cor verde mais escura ao passar o mouse */
 }
 
 /* Modal */
@@ -541,6 +653,7 @@ section {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -552,6 +665,7 @@ section {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -560,36 +674,44 @@ section {
 
 /* Footer */
 .footer {
-    background-color: #121212; /* Fundo escuro para o rodapé */
-    color: #FFFFFF; /* Texto branco */
+    background-color: #121212;
+    /* Fundo escuro para o rodapé */
+    color: #FFFFFF;
+    /* Texto branco */
     padding: 50px 0 0 0;
 }
 
 .footer h3 {
-    color: #FFFFFF; /* Títulos em branco */
+    color: #FFFFFF;
+    /* Títulos em branco */
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-.footer p, .footer a {
-    color: #999; /* Texto em cinza claro */
+.footer p,
+.footer a {
+    color: #999;
+    /* Texto em cinza claro */
     font-size: 1rem;
 }
 
 .footer a:hover {
-    color: #FFFFFF; /* Links em branco ao passar o mouse */
+    color: #FFFFFF;
+    /* Links em branco ao passar o mouse */
 }
 
 .footer .social-icons a {
     display: inline-block;
     margin-right: 10px;
     font-size: 20px;
-    color: #FFFFFF; /* Ícones de redes sociais em branco */
+    color: #FFFFFF;
+    /* Ícones de redes sociais em branco */
     transition: color 0.3s;
 }
 
 .footer .social-icons a:hover {
-    color: #008000; /* Ícones de redes sociais verdes ao passar o mouse */
+    color: #008000;
+    /* Ícones de redes sociais verdes ao passar o mouse */
 }
 
 .footer ul {
@@ -602,13 +724,15 @@ section {
 }
 
 .footer ul li a {
-    color: #FFFFFF; /* Links em branco */
+    color: #FFFFFF;
+    /* Links em branco */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer ul li a:hover {
-    color: #008000; /* Links verdes ao passar o mouse */
+    color: #008000;
+    /* Links verdes ao passar o mouse */
 }
 
 .direitos {
