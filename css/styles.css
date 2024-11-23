@@ -96,6 +96,7 @@ h1 {
     .navbar-collapse.closing {
         transform: scaleY(0); /* Recolhe suavemente */
         opacity: 0; /* Torna invisível */
+        transition: transform 0.4s ease, opacity 0.4s ease; /* Aplica a transição no fechamento */
     }
     .navbar-nav {
         display: flex;
