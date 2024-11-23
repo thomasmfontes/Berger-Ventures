@@ -321,6 +321,48 @@ h1 {
     transform: scale(1.05);
 }
 
+#about-us {
+    background: linear-gradient(135deg, #000, #1a1a1a); /* Fundo preto com degradê */
+    color: #fff;
+    padding: 100px 0; /* Aumenta a altura da seção */
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #32cd32; /* Título em verde vibrante */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+    margin-bottom: 20px;
+}
+
+#about-us p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd; /* Texto com contraste suave */
+    margin-bottom: 15px;
+}
+
+#about-us .btn-success {
+    background-color: #008000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#about-us .btn-success:hover {
+    background-color: #004d00;
+    transform: scale(1.05); /* Efeito leve no hover */
+}
+
+#about-us img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais escura para fundo preto */
+}
+
+
 #services {
     background-color: #f8f9fa;
     color: #212529;
@@ -368,10 +410,6 @@ h1 {
 #home p {
     font-size: 1.5em;
     animation: fadeInUp 1s;
-}
-
-.teste {
-    text-align: center;
 }
 
 section {
