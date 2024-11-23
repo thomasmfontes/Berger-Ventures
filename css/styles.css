@@ -2,23 +2,18 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000;
-    /* Fundo principal preto */
-    color: #FFFFFF;
-    /* Texto branco */
+    background-color: #000;
+    color: #fff;
 }
 
 #home {
-    background: url('../img/home.jpg') no-repeat center center;
-    background-size: cover;
-    color: #FFFFFF;
-    /* Texto branco */
+    background: url('../img/home.jpg') no-repeat center center / cover fixed;
+    color: #fff;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-attachment: fixed;
     margin-top: -100px;
 }
 
@@ -32,7 +27,7 @@ h1 {
 
 /* Navbar geral */
 .navbar {
-    background: linear-gradient(90deg, #000000, #004d00);
+    background: linear-gradient(90deg, #000, #004d00);
     padding: 1rem 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
@@ -43,7 +38,7 @@ h1 {
     .navbar.scrolled {
         padding: 0.3rem 0.8rem;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        background: linear-gradient(90deg, #000000, #002200);
+        background: linear-gradient(90deg, #000, #002200);
     }
 }
 
@@ -111,7 +106,7 @@ h1 {
         font-size: 1rem;
         font-weight: 600;
         border-radius: 8px;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-color 0.3s, color 0.3s;
     }
     .nav-link:hover {
         background: rgba(255, 255, 255, 0.1);
@@ -153,7 +148,7 @@ h1 {
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, #00cc00, #004d00);
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 .nav-link:hover::before {
     width: 100%;
@@ -168,11 +163,11 @@ h1 {
     position: sticky;
     top: 0;
     z-index: 1020;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 @media (max-width: 992px) {
     .sticky-top.scrolled {
-        background: linear-gradient(90deg, #000000, #006600);
+        background: linear-gradient(90deg, #000, #006600);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 }
@@ -181,41 +176,32 @@ h1 {
 #gallery {
     padding: 60px 0;
     background-color: #121212;
-    /* Fundo escuro para a seção */
-    color: #FFFFFF;
-    /* Texto branco */
+    color: #fff;
 }
 
 #gallery .card {
     background-color: #2c2c2c;
-    /* Fundo dos cards */
     border: none;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
-    height: 100%;
-    /* Altura dos cards igual */
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 #gallery .card:hover {
     transform: translateY(-5px);
-    /* Efeito de levantamento ao passar o mouse */
 }
 
 #gallery .card-img-top {
     width: 100%;
-    height: auto;
     object-fit: cover;
-    /* Imagem cobre todo o espaço */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-radius: 8px 8px 0 0;
 }
 
 #gallery .card-body {
     flex: 1;
-    /* O corpo do card ocupa o espaço disponível */
     padding: 20px;
 }
 
@@ -241,19 +227,17 @@ h1 {
     bottom: 20px;
     right: 20px;
     background-color: #008000;
-    /* Cor padrão do WhatsApp */
     color: black;
     padding: 10px 15px;
     border-radius: 50px;
-    text-align: center;
     font-size: 20px;
+    text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 .whatsapp-btn:hover {
     background-color: #004d00;
-    /* Cor ligeiramente mais escura ao passar o mouse */
 }
 
 /* Estilo para a seção de serviços */
@@ -265,12 +249,12 @@ h1 {
 }
 
 #services1 h5 {
-    color: #008000 !important;
+    color: #008000 !important; /* Garantindo destaque */
 }
 
 #services1 .card {
     transition: transform 0.3s ease;
-    background-color: #000000 !important;
+    background-color: #000000 !important; /* Fundo preto garantido */
     margin: 5px;
     border-radius: 50px;
 }
@@ -280,15 +264,13 @@ h1 {
 }
 
 #services1 .card-body {
-    color: #FFFFFF;
-    /* Cor do texto ajustada para contraste */
+    color: #FFFFFF; /* Cor do texto ajustada */
 }
 
 #services1 .card-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #FFFFFF;
-    /* Cor personalizada para o título */
+    color: #FFFFFF; /* Título em branco */
 }
 
 #services1 .card-text {
@@ -298,75 +280,50 @@ h1 {
 
 /* Estilos para a seção adicional */
 #outra-secao {
-    background: url('../img/orlando.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url('../img/orlando.jpg') no-repeat center center / cover fixed;
     padding: 80px 0;
 }
 
 #outra-secao .text-container {
-    padding-right: 30px;
-    /* Espaçamento à direita para separar do lado da imagem */
-    background-color: #2c2c2c;
+    padding: 20px 30px 20px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Cor de fundo translúcido */
-    border-radius: 10px;
 }
 
 #outra-secao h2 {
     font-weight: bold;
-    /* Fonte em negrito */
     margin-bottom: 20px;
-    /* Espaçamento inferior */
     line-height: 1.4;
-    /* Altura da linha */
-    padding: 20px;
-    padding-right: 0px;
 }
 
 #outra-secao p {
     font-size: 1.1rem;
-    /* Tamanho do texto */
     line-height: 1.8;
-    /* Altura da linha */
     margin-bottom: 20px;
-    /* Espaçamento inferior */
     text-align: center;
-    /* Centraliza o texto */
 }
 
 #outra-secao .image-container {
     position: relative;
-    /* Posicionamento relativo para alinhar elementos internos */
     overflow: hidden;
-    /* Oculta qualquer parte da imagem que extrapolar o container */
     border-radius: 10px;
-    /* Borda arredondada */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
 }
 
 #outra-secao img {
     width: 100%;
-    /* Imagem ocupa todo o espaço disponível */
-    height: auto;
-    /* Altura automática */
     transition: transform 0.3s ease;
-    /* Transição suave ao passar o mouse */
 }
 
 #outra-secao img:hover {
     transform: scale(1.05);
-    /* Efeito de escala ao passar o mouse */
 }
 
 #services {
     background-color: #f8f9fa;
-    /* Fundo claro */
     color: #212529;
-    /* Texto principal */
     padding: 80px 0;
 }
 
@@ -374,48 +331,43 @@ h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 40px;
-    color: #FFFFFF;
-    /* Título com cor mais escura */
+    color: #fff;
 }
 
 #services .text-center i {
     color: #008000;
-    /* Ícones com cor verde */
     margin-bottom: 20px;
 }
 
 #services .col-md-4 {
     margin-bottom: 30px;
-    /* Espaçamento inferior para as colunas */
 }
 
 #services h3 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #FFFFFF;
-    /* Títulos das seções */
+    color: #fff;
 }
 
 #services p {
     font-size: 1rem;
     color: #999;
-    /* Texto do parágrafo em cinza escuro */
+}
+
+#home h1, #home p {
+    color: #fff;
+    animation: fadeInDown 1s;
+    text-shadow: none;
 }
 
 #home h1 {
     font-size: 3em;
-    animation: fadeInDown 1s;
-    color: #FFFFFF;
-    /* Texto branco */
-    text-shadow: none;
 }
 
 #home p {
     font-size: 1.5em;
     animation: fadeInUp 1s;
-    color: #FFFFFF;
-    /* Texto branco */
 }
 
 .teste {
@@ -425,35 +377,29 @@ h1 {
 section {
     padding: 60px 0;
     background-color: #121212;
-    /* Fundo escuro para seções */
-    color: #FFFFFF;
-    /* Texto branco */
+    color: #fff;
 }
 
 .bg-light {
     background-color: #2c2c2c !important;
-    /* Alterar cor de fundo clara para escura */
 }
 
-/* Saiba Mais btn */
+/* Botão Saiba Mais */
 .btn-primary {
     background-color: #008000;
-    /* Cor verde do botão */
     border-color: #008000;
     animation: fadeInUp 1s;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .btn-primary:hover {
     background-color: #004d00;
-    /* Cor verde mais escura ao passar o mouse */
     border-color: #004d00;
 }
 
 .contact-section {
     background-color: #121212;
-    /* Fundo escuro */
-    color: #FFFFFF;
-    /* Texto branco */
+    color: #fff;
     padding: 60px 0;
 }
 
@@ -461,7 +407,6 @@ section {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5rem;
-    color: #FFFFFF;
 }
 
 .form-group {
@@ -474,35 +419,25 @@ section {
     border: none;
     border-radius: 5px;
     background-color: #2c2c2c;
-    /* Fundo dos campos de formulário */
-    color: #FFFFFF;
+    color: #fff;
+    transition: box-shadow 0.3s, border-color 0.3s;
 }
 
 .form-control::placeholder {
     color: #999;
-    /* Cor do placeholder */
 }
 
 .form-control:focus {
-    background-color: #2c2c2c;
-    color: #FFFFFF;
     border-color: #008000;
-    /* Cor verde ao focar no campo */
-    outline: none;
     box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
-    /* Sombra verde ao focar */
+    outline: none;
 }
 
 .form-container {
     background-color: #1c1c1c;
     padding: 20px;
     border-radius: 5px;
-    color: #fff;
 }
-
-/* .form-control, .btn {
-    border-radius: 0;
-} */
 
 .ddi-selector {
     max-width: 120px;
@@ -519,24 +454,18 @@ section {
 
 .custom-select {
     background-color: #474747;
-    border: #474747;
-    color: white;
-}
-
-.custom-select:focus {
-    box-shadow: none;
-
+    border: none;
+    color: #fff;
 }
 
 .input-group-text {
     background-color: #474747;
-    border: #474747;
+    border: none;
     border-right: 2px solid #1c1c1c;
 }
 
 .btn-primary {
     background-color: #008000;
-    /* Cor verde do botão */
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -545,7 +474,6 @@ section {
 
 .btn-primary:hover {
     background-color: #004d00;
-    /* Cor verde mais escura ao passar o mouse */
 }
 
 /* Modal */
@@ -554,12 +482,9 @@ section {
     color: #fff;
 }
 
-.modal-header {
-    border-bottom: 1px solid #444;
-}
-
+.modal-header,
 .modal-footer {
-    border-top: 1px solid #444;
+    border-color: #444;
 }
 
 .close {
@@ -570,6 +495,7 @@ section {
     background-color: #008000;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .btn-secondary:hover {
@@ -587,42 +513,37 @@ section {
     }
 }
 
+/* Animações */
 @keyframes fadeInDown {
-    from {
+    0% {
         opacity: 0;
         transform: translateY(-20px);
     }
-
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
 @keyframes fadeInUp {
-    from {
+    0% {
         opacity: 0;
         transform: translateY(20px);
     }
-
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} 
 
 /* Footer */
 .footer {
     background-color: #121212;
-    /* Fundo escuro para o rodapé */
-    color: #FFFFFF;
-    /* Texto branco */
-    padding: 50px 0 0 0;
+    color: #fff;
+    padding: 50px 0 0;
 }
 
 .footer h3 {
-    color: #FFFFFF;
-    /* Títulos em branco */
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
@@ -630,48 +551,39 @@ section {
 .footer p,
 .footer a {
     color: #999;
-    /* Texto em cinza claro */
     font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer a:hover {
-    color: #FFFFFF;
-    /* Links em branco ao passar o mouse */
+    color: #fff;
 }
 
 .footer .social-icons a {
     display: inline-block;
     margin-right: 10px;
     font-size: 20px;
-    color: #FFFFFF;
-    /* Ícones de redes sociais em branco */
+    color: #fff;
     transition: color 0.3s;
 }
 
 .footer .social-icons a:hover {
     color: #008000;
-    /* Ícones de redes sociais verdes ao passar o mouse */
 }
 
 .footer ul {
     padding-left: 0;
     list-style: none;
+    text-align: left;
 }
 
 .footer ul li {
     margin-bottom: 10px;
 }
 
-.footer ul li a {
-    color: #FFFFFF;
-    /* Links em branco */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
 .footer ul li a:hover {
     color: #008000;
-    /* Links verdes ao passar o mouse */
 }
 
 .direitos {
@@ -686,15 +598,12 @@ section {
 }
 
 @media (max-width: 768px) {
-    .footer .col-md-4 {
+    .footer .col-md-4,
+    .footer ul.quick-links {
         text-align: center;
     }
 
     .footer .social-icons {
         margin-bottom: 20px;
-    }
-
-    .footer ul.quick-links {
-        text-align: center;
     }
 }
