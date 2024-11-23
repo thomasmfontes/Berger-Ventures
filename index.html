@@ -468,15 +468,17 @@
 
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    navbarCollapse.style.transition = 'transform 0.4s ease, opacity 0.4s ease'; // Garante que a transição esteja ativa
-                    navbarCollapse.classList.add('closing'); // Adiciona uma classe de fechamento
+                    // Adiciona classe 'closing' para iniciar a animação
+                    navbarCollapse.classList.add('closing');
+                    navbarCollapse.classList.remove('show'); // Remove 'show' para ocultar o menu
+
+                    // Após a animação, remove a classe 'closing'
                     setTimeout(() => {
-                        navbarCollapse.classList.remove('show', 'closing'); // Remove as classes após a transição
-                    }, 400); // Tempo correspondente à duração da transição no CSS
+                        navbarCollapse.classList.remove('closing');
+                    }, 400); // Tempo correspondente à duração da animação no CSS
                 });
             });
         });
-
 
         // Ajuste para navbar fixa ao rolar até âncoras
         function adjustAnchorScroll() {
