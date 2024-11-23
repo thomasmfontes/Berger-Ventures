@@ -468,17 +468,17 @@
 
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    // Adiciona classe 'closing' para iniciar a animação
+                    // Adiciona classe para animação de fechamento
                     navbarCollapse.classList.add('closing');
-                    navbarCollapse.classList.remove('show'); // Remove 'show' para ocultar o menu
 
-                    // Após a animação, remove a classe 'closing'
+                    // Remove 'show' após a animação
                     setTimeout(() => {
-                        navbarCollapse.classList.remove('closing');
-                    }, 400); // Tempo correspondente à duração da animação no CSS
+                        navbarCollapse.classList.remove('show', 'closing');
+                    }, 400); // Tempo correspondente à duração da animação no CSS (400ms)
                 });
             });
         });
+
 
         // Ajuste para navbar fixa ao rolar até âncoras
         function adjustAnchorScroll() {
@@ -571,7 +571,6 @@
             offset: 50      // Ajusta o gatilho de exibição
         });
     </script>
-
 </body>
 
 </html>
