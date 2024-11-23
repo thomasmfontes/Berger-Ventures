@@ -223,21 +223,48 @@ h1 {
 }
 
 .whatsapp-btn {
-    position: absolute;
+    position: absolute; /* Fixado dentro do card */
     bottom: 20px;
     right: 20px;
-    background-color: #008000;
-    color: black;
+    background: linear-gradient(45deg, #25d366, #128c7e);
+    color: white;
     padding: 10px 15px;
     border-radius: 50px;
-    font-size: 20px;
-    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
     text-decoration: none;
-    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o texto e o ícone */
+    transition: all 0.3s ease;
 }
 
+/* Ícone do botão */
+.whatsapp-btn i {
+    font-size: 20px;
+}
+
+/* Efeito ao passar o mouse */
 .whatsapp-btn:hover {
-    background-color: #004d00;
+    transform: scale(1.1); /* Leve aumento no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+}
+
+/* Animação ao carregar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.whatsapp-btn {
+    animation: fadeIn 0.5s ease-in-out; /* Animação suave ao aparecer */
 }
 
 /* Estilo para a seção de serviços */
