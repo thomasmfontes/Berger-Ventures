@@ -310,90 +310,86 @@ h1 {
     line-height: 1.8;
 }
 
-/* Estilos para a seção adicional */
+/* Seção adicional */
 #outra-secao {
     background: url('../img/orlando.jpg') no-repeat center center / cover fixed;
-    padding: 80px 0;
+    padding: 50px 0; /* Reduz o padding para telas menores */
 }
 
+/* Contêiner de texto */
 #outra-secao .text-container {
-    padding: 20px 30px 20px 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro para maior contraste */
     border-radius: 10px;
-    width: 100%;
-    height: 100%;
+    width: 90%; /* Largura ajustada para centralizar o texto */
+    margin: 0 auto; /* Centraliza o contêiner */
 }
 
+/* Títulos */
 #outra-secao h2 {
+    font-size: 1.8rem; /* Reduz tamanho para mobile */
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     line-height: 1.4;
+    text-align: center; /* Centraliza o título */
+    color: #fff; /* Garante contraste em fundos escuros */
 }
 
+/* Parágrafos */
 #outra-secao p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 1rem; /* Texto levemente menor */
+    line-height: 1.6; /* Ajusta espaçamento entre linhas */
+    margin-bottom: 15px;
+    text-align: justify; /* Justifica para maior legibilidade */
+    color: #ccc; /* Cor mais clara para contraste */
 }
 
+/* Contêiner de imagem */
 #outra-secao .image-container {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais visível */
+    margin: 20px auto; /* Espaçamento em torno da imagem */
+    width: 90%; /* Reduz largura para centralizar no mobile */
 }
 
+/* Imagens */
 #outra-secao img {
     width: 100%;
+    height: auto;
     transition: transform 0.3s ease;
 }
 
+/* Efeito ao passar o mouse */
 #outra-secao img:hover {
     transform: scale(1.05);
 }
 
-#about-us {
-    background: linear-gradient(135deg, #000, #1a1a1a); /* Fundo preto com degradê */
-    color: #fff;
-    padding: 100px 0; /* Aumenta a altura da seção */
-}
+/* Estilos específicos para dispositivos móveis */
+@media (max-width: 768px) {
+    #outra-secao {
+        padding: 40px 0; /* Reduz ainda mais o padding no mobile */
+        background-attachment: scroll; /* Remove o efeito "fixed" para dispositivos móveis */
+    }
 
-#about-us h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #32cd32; /* Título em verde vibrante */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra no texto */
-    margin-bottom: 20px;
-}
+    #outra-secao .text-container {
+        width: 95%; /* Ocupa quase toda a largura no mobile */
+    }
 
-#about-us p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #ddd; /* Texto com contraste suave */
-    margin-bottom: 15px;
-}
+    #outra-secao h2 {
+        font-size: 1.6rem; /* Títulos menores no mobile */
+    }
 
-#about-us .btn-success {
-    background-color: #008000;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+    #outra-secao p {
+        font-size: 0.95rem; /* Texto um pouco menor no mobile */
+    }
 
-#about-us .btn-success:hover {
-    background-color: #004d00;
-    transform: scale(1.05); /* Efeito leve no hover */
+    #outra-secao .image-container {
+        width: 95%; /* Centraliza e ajusta o tamanho no mobile */
+        margin-bottom: 20px; /* Adiciona mais espaçamento abaixo da imagem */
+    }
 }
-
-#about-us img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais escura para fundo preto */
-}
-
 
 #services {
     background-color: #f8f9fa;
