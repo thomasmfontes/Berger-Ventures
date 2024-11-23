@@ -83,15 +83,19 @@ h1 {
         padding: 0.8rem 1rem;
         border-radius: 12px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        transform: scale(0.95);
-        opacity: 0;
-        display: none;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scaleY(0); /* Inicialmente escondido */
+        transform-origin: top; /* Origem da animação */
+        opacity: 0; /* Invisível inicialmente */
+        transition: transform 0.4s ease, opacity 0.4s ease;
     }
+
     .navbar-collapse.show {
-        transform: scale(1);
-        opacity: 1;
-        display: block;
+        transform: scaleY(1); /* Mostra o menu */
+        opacity: 1; /* Torna visível */
+    }
+    .navbar-collapse.closing {
+        transform: scaleY(0); /* Recolhe suavemente */
+        opacity: 0; /* Torna invisível */
     }
     .navbar-nav {
         display: flex;
