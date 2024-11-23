@@ -251,14 +251,18 @@
                 <div class="col-md-6 order-md-2 text-light">
                     <h2 class="text-uppercase text-success mb-4">Vamos conversar?</h2>
                     <p>
-                        A Berger Ventures America - Homeowner Assistance - irá te assessorar para que você encontre soluções
+                        A Berger Ventures America - Homeowner Assistance - irá te assessorar para que você encontre
+                        soluções
                         acerca de assuntos relacionados a compra de imóveis, abertura de empresa, modelos de sociedade,
-                        tributação americana, formalidades estaduais e federais, funcionamento de empresas de property manager,
-                        relação com bancos americanos, além de dar uma direção a você para particularidades relacionadas a
+                        tributação americana, formalidades estaduais e federais, funcionamento de empresas de property
+                        manager,
+                        relação com bancos americanos, além de dar uma direção a você para particularidades relacionadas
+                        a
                         locação de temporada, serviços advocatícios, financiamento, seguros e muito mais.
                     </p>
                     <p>
-                        Através de parcerias com empresas e profissionais licenciados de diversos ramos, a relação de amizade e
+                        Através de parcerias com empresas e profissionais licenciados de diversos ramos, a relação de
+                        amizade e
                         confiança será o elo que nos manterá juntos, com uma parceria prática, funcional e duradoura.
                     </p>
                 </div>
@@ -457,6 +461,22 @@
                 isScrolled = false;
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navbarCollapse.style.transition = 'transform 0.4s ease, opacity 0.4s ease'; // Garante que a transição esteja ativa
+                    navbarCollapse.classList.add('closing'); // Adiciona uma classe de fechamento
+                    setTimeout(() => {
+                        navbarCollapse.classList.remove('show', 'closing'); // Remove as classes após a transição
+                    }, 400); // Tempo correspondente à duração da transição no CSS
+                });
+            });
+        });
+
 
         // Ajuste para navbar fixa ao rolar até âncoras
         function adjustAnchorScroll() {
