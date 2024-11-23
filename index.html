@@ -246,16 +246,27 @@
     <!-- Sobre Nós Section -->
     <section id="about-us" class="py-5">
         <div class="container">
-            <h2 class="text-center my-3">Vamos conversar?</h2>
-            <p class="text-center">A Berger Ventures America - Homeowner Assistance - irá te assessorar para que você
-                encontre soluções acerca de assuntos relacionados a compra de imóveis, abertura de empresa, modelos de
-                sociedade, tributação americana, formalidades estaduais e federais, funcionamento de empresas de
-                property manager, relação com bancos americanos, além de dar uma direção a você para particularidades
-                relacionadas a locação de temporada, serviços advocatícios, financiamento, seguros e muitas outras
-                informações que irão surgir enquanto você mantiver seu patrimônio nos EUA. Através de parcerias com
-                empresas e prestadores profissionais licenciados de diversos ramos e da experiência americana, a relação
-                de amizade e confiança será o elo que nos manterá juntos com uma parceria prática, funcional e
-                duradoura.</p>
+            <div class="row align-items-center">
+                <!-- Texto -->
+                <div class="col-md-6 order-md-2 text-light">
+                    <h2 class="text-uppercase text-success mb-4">Vamos conversar?</h2>
+                    <p>
+                        A Berger Ventures America - Homeowner Assistance - irá te assessorar para que você encontre soluções
+                        acerca de assuntos relacionados a compra de imóveis, abertura de empresa, modelos de sociedade,
+                        tributação americana, formalidades estaduais e federais, funcionamento de empresas de property manager,
+                        relação com bancos americanos, além de dar uma direção a você para particularidades relacionadas a
+                        locação de temporada, serviços advocatícios, financiamento, seguros e muito mais.
+                    </p>
+                    <p>
+                        Através de parcerias com empresas e profissionais licenciados de diversos ramos, a relação de amizade e
+                        confiança será o elo que nos manterá juntos, com uma parceria prática, funcional e duradoura.
+                    </p>
+                </div>
+                <!-- Imagem decorativa -->
+                <div class="col-md-6 order-md-1 text-center">
+                    <img src="https://via.placeholder.com/500x400" alt="Sobre Nós" class="img-fluid rounded shadow">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -447,18 +458,47 @@
             }
         });
 
+        // Ajuste para navbar fixa ao rolar até âncoras
+        function adjustAnchorScroll() {
+            const navbarHeight = navbar.offsetHeight; // Altura da navbar
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+
+                    if (target) {
+                        event.preventDefault();
+                        const targetPosition = target.offsetTop - navbarHeight; // Compensa a altura da navbar
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Chama a função de ajuste das âncoras
+        adjustAnchorScroll();
+
         // Smooth Scroll para âncoras
         $(document).ready(function () {
             $(".navbar-nav a, .quick-links a, .saiba-mais").on('click', function (event) {
                 if (this.hash !== "") {
                     event.preventDefault();
                     const target = $(this.hash);
+                    const navbarHeight = $('.navbar').outerHeight(); // Obtém a altura da navbar
+
                     $('html, body').stop(true).animate({
-                        scrollTop: target.offset().top
-                    }, 800); // Smooth scroll com duração de 800ms
+                        scrollTop: target.offset().top - navbarHeight // Compensa a altura da navbar
+                    }, 800); // Duração da rolagem suave
                 }
             });
         });
+
 
         // Placeholder e Pattern para Formulário de Telefone
         function updatePlaceholderAndPattern() {
@@ -509,7 +549,6 @@
             offset: 50      // Ajusta o gatilho de exibição
         });
     </script>
-
 </body>
 
 </html>
